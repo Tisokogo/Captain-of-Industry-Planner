@@ -163,6 +163,22 @@ export function App() {
     };
     reader.readAsText(f);
   };
+  const refreshCurrentData = async () => {
+    try {
+      const response = await fetch('http://127.0.0.1:4174/api/current-data');
+      const result = await response.json();
+      if (!response.ok || !result.available) {
+        notify('Keine aktuellen Spieldaten gefunden. Ist Captain of Industry gestartet?');
+        return;
+      }
+      localStorage.setItem('harbor-current-export', JSON.stringify(result.data));
+      localStorage.setItem('harbor-current-export-meta', JSON.stringify(result));
+      notify(`${result.data.game_version}: aktuelle Daten geladen`);
+      window.setTimeout(() => window.location.reload(), 500);
+    } catch {
+      notify('Datenservice nicht erreichbar. Bitte die Startdatei verwenden.');
+    }
+  };
   const reset = () => {
     setState(defaultState());
     setTab('planner');
@@ -275,9 +291,17 @@ export function App() {
             hidden
             onChange={(e) => importCurrentData(e.target.files?.[0])}
           />
-          <button className="soft" onClick={() => currentDataRef.current?.click()}>
+          <button
+            className="soft"
+            onClick={refreshCurrentData}
+            title="Sucht automatisch nach einem aktuellen DataExporter-Export"
+          >
             <Database />
-            {lang === 'de' ? 'Aktuelle Spieldaten laden' : 'Load current game data'}
+            {lang === 'de' ? 'Aktuelle Daten suchen' : 'Find current data'}
+          </button>
+          <button className="soft" onClick={() => currentDataRef.current?.click()}>
+            <FileUp />
+            {lang === 'de' ? 'Export auswählen' : 'Choose export'}
           </button>
           <button className="soft" onClick={() => fileRef.current?.click()}>
             <FileUp />

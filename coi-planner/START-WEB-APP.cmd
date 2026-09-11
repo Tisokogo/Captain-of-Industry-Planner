@@ -47,5 +47,5 @@ echo Dieses Fenster zum Beenden schliessen oder Strg+C druecken.
 echo Close this window or press Ctrl+C to stop.
 echo.
 
-call npm run dev -- --open
+call npm run start:local
 if errorlevel 1 pause

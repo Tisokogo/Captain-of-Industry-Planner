@@ -34,6 +34,12 @@ Doppelklick auf `START-WEB-APP.sh` und **Im Terminal ausführen** wählen. Alter
 4. Solange das Terminalfenster geöffnet bleibt, ist die App verfügbar.
 5. Fenster schließen oder `Strg+C` drücken, um die App zu beenden.
 
+Beim Start läuft zusätzlich ein kleiner lokaler Datenservice mit. Er sucht
+automatisch nach einem aktuellen `coi_database.json`-Export und lädt ihn ohne
+weitere Einrichtung. Wird kein Export gefunden, verwendet der Planner den
+integrierten geprüften Datenstand. In der Toolbar kann die Suche mit
+**Aktuelle Daten suchen** erneut gestartet werden.
+
 ## Einzige Voraussetzung
 
 Auf dem Computer muss **Node.js 20** installiert sein. Falls Node.js fehlt, zeigen die Startdateien eine verständliche Meldung und öffnen die offizielle Downloadseite:

@@ -88,6 +88,11 @@ In CI wird Chromium einschließlich Systemabhängigkeiten installiert und die E2
 
 ## Datenstand
 
+Beim Start sucht der mitgelieferte lokale Datenservice automatisch nach einem
+aktuellen DataExporter-Export. Wird keiner gefunden, läuft die App mit dem
+integrierten geprüften Datenstand weiter. Der Button **Aktuelle Daten suchen**
+startet die Suche erneut; **Export auswählen** bleibt als manueller Fallback.
+
 - Verifizierter Produktionsdatensatz: **v0.8.2c**
 - Aktuell bekannte Spielversion: **v0.8.7b** vom 22.08.2026
 - Umfang: 222 Produkte, 1.587 Rezepte und 179 Maschinen

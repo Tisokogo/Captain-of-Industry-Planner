@@ -25,4 +25,4 @@ fi
 echo "Die Web-App startet und öffnet sich im Browser."
 echo "The web app is starting and will open in your browser."
 echo "Zum Beenden dieses Fenster schließen oder Strg+C drücken."
-npm run dev -- --open
+npm run start:local
