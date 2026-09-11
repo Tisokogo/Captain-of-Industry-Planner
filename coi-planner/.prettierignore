@@ -1,0 +1,8 @@
+node_modules
+dist
+public
+src/data
+scripts/reference-update3.json
+*.tsbuildinfo
+*.md
+package-lock.json

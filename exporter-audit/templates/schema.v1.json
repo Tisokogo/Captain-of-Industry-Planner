@@ -1,0 +1,101 @@
+{
+  "game_version": "<STRING>",
+  "schema_version": 1,
+  "products": [
+    {
+      "type": "products",
+      "name": "<String>",
+      "id": "<PRODUCT_ID_STRING>",
+      "state": "<Unit|Loose|Fluid|Virtual>",
+      "is_storable": "<BOOLEAN>",
+      "radioactivity": "<FLOAT>",
+      "is_trash": "<BOOLEAN>"
+    }
+  ],
+  "recipes": [
+    {
+      "machine": ["<MACHINE_ID_STRING>"],
+      "duration": "<FLOAT>",
+      "inputs": [
+        {
+          "product_id": "<PRODUCT_ID_STRING>",
+          "amount": "<FLOAT>"
+        }
+      ],
+      "outputs": [
+        {
+          "product_id": "<PRODUCT_ID_STRING>",
+          "amount": "<FLOAT>"
+        }
+      ]
+    }
+  ],
+  "buildings": [
+    {
+      "type": "building",
+      "name": "<STRING>",
+      "id": "<MACHINE_ID_STRING>",
+      "stats": {
+        "workers": "<INT>",
+        "electricity_kw": "<INT>",
+        "computing_tflops": "<INT>",
+        "maintenance_cost": {
+          "product_id": "<PRODUCT_ID_STRING>",
+          "amount": "<FLOAT>"
+        }
+      },
+      "construction_cost": [{
+        "product_id": "<PRODUCT_ID_STRING>",
+        "amount": "<FLOAT>"
+      }]
+    }
+  ],
+  "contracts": [
+    {
+      "type": "contract",
+      "reputation_level": "<INT>",
+      "inputs": [
+        {
+          "product_id": "<PRODUCT_ID_STRING>",
+          "amount": "<FLOAT>"
+        }
+      ],
+      "outputs": [
+        {
+          "product_id": "<PRODUCT_ID_STRING>",
+          "amount": "<FLOAT>"
+        }
+      ]
+    }
+  ],
+  "game_settings": {
+    "difficulty_options": [
+      {
+        "id": "<SETTING_ID_STRING>",
+        "title": "<STRING>",
+        "kind": "<percent|enum|bool|string|value|value_list>",
+        "current_value": "<VALUE>",
+        "tooltip": "<STRING>",
+        "possible_values": [
+          {
+            "value": "<VALUE>",
+            "label": "<STRING>"
+          }
+        ]
+      }
+    ],
+    "difficulty_current_values": {
+      "<SETTING_ID_STRING>": "<VALUE>"
+    },
+    "mechanics_options": [
+      {
+        "id": "<MECHANIC_ID_STRING>",
+        "name": "<STRING>"
+      }
+    ],
+    "mechanics_current_values": [
+      "<MECHANIC_ID_STRING>"
+    ],
+    "original_preset": "<STRING>"
+  }
+}

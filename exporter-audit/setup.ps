@@ -1,0 +1,92 @@
+$ErrorActionPreference = 'Stop'
+Set-StrictMode -Version Latest
+
+$ScriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
+Set-Location -LiteralPath $ScriptRoot
+
+function Read-ExistingDirectory {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Prompt
+    )
+
+    while ($true) {
+        $value = Read-Host $Prompt
+
+        if ([string]::IsNullOrWhiteSpace($value)) {
+            Write-Host 'Path cannot be empty.'
+            continue
+        }
+
+        if (-not (Test-Path -LiteralPath $value -PathType Container)) {
+            Write-Host "Not a directory: $value"
+            continue
+        }
+
+        return (Resolve-Path -LiteralPath $value).Path
+    }
+}
+
+function Confirm {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Prompt
+    )
+
+    $answer = Read-Host $Prompt
+    switch ($answer) {
+        'y' { return $true }
+        'Y' { return $true }
+        'yes' { return $true }
+        'YES' { return $true }
+        default { return $false }
+    }
+}
+
+function Remove-ExistingPath {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Path
+    )
+
+    if (Test-Path -LiteralPath $Path) {
+        Remove-Item -LiteralPath $Path -Recurse -Force
+    }
+}
+
+function New-DirectoryLink {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$LinkPath,
+        [Parameter(Mandatory = $true)]
+        [string]$TargetPath
+    )
+
+    try {
+        New-Item -ItemType SymbolicLink -Path $LinkPath -Target $TargetPath | Out-Null
+    }
+    catch {
+        New-Item -ItemType Junction -Path $LinkPath -Target $TargetPath | Out-Null
+    }
+}
+
+$gameManaged = Read-ExistingDirectory 'Captain of Industry Managed folder'
+$modsTarget = Read-ExistingDirectory 'Captain of Industry Mods folder'
+
+Write-Host ''
+Write-Host "game_libs -> $gameManaged"
+Write-Host "mods_folder -> $modsTarget"
+Write-Host ''
+
+if (-not (Confirm "Create or replace these links in $ScriptRoot? [y/N]")) {
+    Write-Host 'Cancelled.'
+    exit 1
+}
+
+Remove-ExistingPath -Path (Join-Path $ScriptRoot 'game_libs')
+Remove-ExistingPath -Path (Join-Path $ScriptRoot 'mods_folder')
+
+New-DirectoryLink -LinkPath (Join-Path $ScriptRoot 'game_libs') -TargetPath $gameManaged
+New-DirectoryLink -LinkPath (Join-Path $ScriptRoot 'mods_folder') -TargetPath $modsTarget
+
+Write-Host 'Setup complete.'

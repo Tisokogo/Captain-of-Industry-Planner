@@ -1,0 +1,12 @@
+{
+  "id": "DataExporter",
+  "displayName": "JSON Data Exporter",
+  "version": "1.0.24",
+  "description_short": "Exports CoI data to JSON.",
+  "description_long": "Exports building, resource and recipe information in JSON format.",
+  "authors": ["FelixZett"],
+  "primary_dlls": ["coi_data_scraper.dll"],
+  "non_locking_dll_load": false,
+  "can_add_to_saved_game": true,
+  "can_remove_from_saved_game": true
+}

@@ -1,0 +1,42 @@
+{
+  "machineDisposition": {
+    "liquid_dump": "dump",
+    "gas_injection_pump": "dump",
+    "flare": "flare",
+    "smoke_stack": "flare",
+    "smoke_stack_large": "flare",
+    "wastewater_treatment": "wastewater",
+    "radioactive_waste_storage": "storage"
+  },
+  "storageTransport": {
+    "fluid_storage": "fluid",
+    "fluid_storage_ii": "fluid",
+    "fluid_storage_iii": "fluid",
+    "fluid_storage_iv": "fluid",
+    "loose_storage": "loose",
+    "loose_storage_ii": "loose",
+    "loose_storage_iii": "loose",
+    "loose_storage_iv": "loose",
+    "unit_storage": "unit",
+    "unit_storage_ii": "unit",
+    "unit_storage_iii": "unit",
+    "unit_storage_iv": "unit",
+    "thermal_storage": "thermal",
+    "radioactive_waste_storage": "radioactive"
+  },
+  "extractionMachines": ["oil_pump", "groundwater_pump", "rainwater_harvester", "seawater_pump"],
+  "importableProducts": [
+    "crude_oil",
+    "coal",
+    "iron_ore",
+    "copper_ore",
+    "gold_ore",
+    "bauxite",
+    "uranium_ore",
+    "limestone",
+    "quartz",
+    "sulfur",
+    "wood",
+    "rubber"
+  ]
+}

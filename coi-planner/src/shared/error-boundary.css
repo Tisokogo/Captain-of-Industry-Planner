@@ -1,0 +1,29 @@
+.fatal-error {
+  max-width: 680px;
+  margin: 12vh auto;
+  padding: 32px;
+  border: 1px solid #6d3d37;
+  background: #1d1413;
+  color: #e8e3df;
+}
+
+.fatal-error code {
+  display: block;
+  margin: 16px 0;
+  padding: 12px;
+  overflow-wrap: anywhere;
+  background: #100d0c;
+  color: #df8a7e;
+}
+
+.fatal-error div {
+  display: flex;
+  gap: 8px;
+}
+
+.fatal-error button {
+  padding: 9px 14px;
+  border: 1px solid #6c5544;
+  background: #2c241d;
+  cursor: pointer;
+}

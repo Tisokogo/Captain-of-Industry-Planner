@@ -1,0 +1,30 @@
+# Node/Vite
+node_modules/
+dist/
+coverage/
+.playwright/
+playwright-report/
+test-results/
+
+# Local environment and editor state
+.env
+.env.*
+!.env.example
+.vscode/
+.sudo_as_admin_successful
+**/.git.nested-backup/
+
+# Local game/exporter installations
+exporter-audit/game_libs/
+exporter-audit/mods_folder/
+exporter-audit/bin/
+exporter-audit/obj/
+
+# Local exports and uploads
+uploads/
+coi-planner/src/data/current-export.json
+coi-planner/src/data/current-research.json
+coi-planner/src/data/current-export-manifest.json
+
+# Deno cache
+.deno/

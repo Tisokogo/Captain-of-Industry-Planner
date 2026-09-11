@@ -1,0 +1,63 @@
+.source-detail {
+  display: block;
+  margin: 5px 0 2px 33px;
+  padding: 5px 7px;
+  border-left: 2px solid #59705c;
+  color: #859087;
+  font-size: 7px;
+  line-height: 1.4;
+  background: #131914;
+}
+.help-content {
+  padding: 18px 24px 26px;
+  overflow: auto;
+  color: #b7beb8;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.help-content h3 {
+  font-family: 'Barlow Condensed';
+  text-transform: uppercase;
+  color: var(--orange);
+  letter-spacing: 0.05em;
+  margin: 8px 0;
+}
+.help-content li {
+  margin: 7px 0;
+}
+.help-content p {
+  padding: 10px;
+  border: 1px solid #343d35;
+  background: #101511;
+}
+@media (max-width: 720px) {
+  header nav.mobile-open {
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 59px;
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 8px;
+    background: #101511;
+    border-bottom: 1px solid #3b443c;
+    box-shadow: 0 16px 35px #000c;
+  }
+  header nav.mobile-open button {
+    height: 46px;
+    padding: 0 18px;
+  }
+  header nav.mobile-open button.active:after {
+    left: 0;
+    right: auto;
+    top: 7px;
+    bottom: 7px;
+    width: 3px;
+    height: auto;
+  }
+  .head-actions .mobile-menu {
+    display: flex;
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "tasks": {
+    "bundle": "deno bundle --platform=browser --watch ./src/app.jsx -o ./public/app.js",
+    "serve": "cd public; deno run -A jsr:@std/http/file-server",
+    "extract": "deno run -A ./scripts/extract.ts"
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1"
+  },
+  "unstable": [
+    "sloppy-imports"
+  ]
+}

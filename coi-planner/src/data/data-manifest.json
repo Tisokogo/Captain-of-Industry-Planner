@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "gameData": {
+    "version": "v0.8.2c",
+    "release": "Update 4",
+    "compatibilityClaim": "v0.8.x",
+    "compatibilityVerifiedThrough": "v0.8.2c",
+    "latestKnownGameVersion": "v0.8.7b",
+    "latestKnownVersionDate": "2026-08-22",
+    "currentVersionExportAvailable": false
+  },
+  "source": {
+    "project": "David-Melo/captains-calculator",
+    "url": "https://github.com/David-Melo/captains-calculator",
+    "commit": null,
+    "exportedAt": null
+  },
+  "progressionReference": {
+    "release": "Update 3",
+    "path": "scripts/reference-update3.json",
+    "sha256": "749133cf66954ca2ca9d8cfe7b93320a0773603a7eefcda947e36ae06a2f468e",
+    "role": "fallback mapping reference; direct and signature matches are recorded per recipe"
+  },
+  "transformVersion": 1,
+  "licenseStatus": "Source repository and game-asset licenses require release review",
+  "files": {
+    "categories.json": {
+      "sha256": "b46409c307d38e40a1778910fdccb8ebca2c6fdcc8f026768a494e0cfa922591",
+      "bytes": 67329
+    },
+    "machines.json": {
+      "sha256": "41ccdd1f825f01a342a3f759402ad696ae94e507ee9a2a98af10d2b8f6f49355",
+      "bytes": 336415
+    },
+    "products.json": {
+      "sha256": "fbab9d75def6ecdbe81e365557f6869272d7495a4c7e0239a3c5bb8a2d78ddd9",
+      "bytes": 346028
+    },
+    "recipes.json": {
+      "sha256": "769908cd4de6e8627040fcbc2af078330e3c88e22d6fb6a24e65050aa970fa4c",
+      "bytes": 923949
+    },
+    "recipe-progression.json": {
+      "sha256": "8cb9e92b11442d16254d85e7d475131267ff2ef4fce8645860346eb0fbdc5bc8",
+      "bytes": 543121
+    },
+    "product-capabilities.json": {
+      "sha256": "3fa880d9d2ea5889d30718ce05654f6c6a5967ccbfa85e6d5474340b2dcb50e7",
+      "bytes": 357082
+    }
+  }
+}

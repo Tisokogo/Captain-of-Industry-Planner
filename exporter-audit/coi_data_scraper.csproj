@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <LangVersion>8.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <AssemblySearchPaths>$(ProjectDir)game_libs;$(AssemblySearchPaths)</AssemblySearchPaths>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Mafi"><HintPath>game_libs/Mafi.dll</HintPath></Reference>
+    <Reference Include="Mafi.Core"><HintPath>game_libs/Mafi.Core.dll</HintPath></Reference>
+    <Reference Include="Mafi.Base"><HintPath>game_libs/Mafi.Base.dll</HintPath></Reference>
+    <Reference Include="Mafi.Unity"><HintPath>game_libs/Mafi.Unity.dll</HintPath></Reference>
+  </ItemGroup>
+
+  <Target Name="CopyModArtifacts" AfterTargets="Build" Condition="'$(SkipModCopy)' != 'true'">
+    <PropertyGroup>
+      <ModOutputDir>$(ProjectDir)mods_folder/DataExporter</ModOutputDir>
+    </PropertyGroup>
+    <MakeDir Directories="$(ModOutputDir)" />
+    <Copy SourceFiles="$(TargetPath)"
+          DestinationFiles="$(ModOutputDir)/$(TargetFileName)"
+          SkipUnchangedFiles="true" />
+    <Copy SourceFiles="$(ProjectDir)manifest.json"
+          DestinationFiles="$(ModOutputDir)/manifest.json"
+          SkipUnchangedFiles="true" />
+  </Target>
+</Project>
